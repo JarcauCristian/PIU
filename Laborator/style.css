@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #301E67;
+}
+
+.nav_bar {
+    width: 100%;
+    height: 65px;
+    background: #03001C;
+    position: sticky;
+}
+
+.nav_logo {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 4px;
+    background: -webkit-linear-gradient(45deg, #5B8FB9, #301E67);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+.special_links {
+    width: 450px;
+    padding-left: 65%;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.special_links a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.special_links a:hover{
+    color: #301E67;
+}
+
+.special_links button {
+    width: 100px;
+    height: 35px;
+    background: #301E67;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.special_links button:hover {
+    background: #5B8FB9;
+    transition: 0.7s;
+}
+
+.first_sec {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.my_img {
+    width: 500px;
+    height: 700px;
+    margin-left: 250px;
+}
+
+.getting_started {
+    line-height: 50px;
+    margin-left: 200px;
+}
+
+.getting_started p {
+    font-size: 50px;
+    color: #5B8FB9;
+}
+
+.start_btn {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #03001C;
+    color: white;
+}
+
+.start_btn:hover {
+    background: #5B8FB9;
+    transition: .7s;
+}
+
+
+@media only screen and (max-width: 960px) {
+
+    .first_sec {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav_logo {
+        left: 40px;
+    }
+
+    .special_links {
+        padding-left: 350px;
+    }
+
+    .my_img {
+        width: 500px;
+        height: 700px;
+        padding-right: 100px;
+        margin-top: 100px;
+    }
+
+    .getting_started p {
+        font-size: 40px;
+    }
+}
+
+

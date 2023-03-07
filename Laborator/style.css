@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -22,6 +23,8 @@ body {
   border: 4px solid #5B8FB9;
   padding: 8px 10px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .nav_btn div {
@@ -29,6 +32,7 @@ body {
   background: #fff;
   margin: 3px 0px 3px 0px;
   border-radius: 25px;
+  transition: all .5s;
 }
 
 .nav_logo {
@@ -44,7 +48,8 @@ body {
 
 .special_links {
     width: 500px;
-    margin-left: 780px;
+    margin-left: auto; 
+    margin-right: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,14 +91,15 @@ body {
 }
 
 .my_img {
-    width: 500px;
+    width: 600px;
     height: 700px;
-    margin-left: 250px;
+    margin-left: auto;
+    margin-right: 200px;
 }
 
 .getting_started {
     line-height: 50px;
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
 .getting_started p {
@@ -141,6 +147,39 @@ body {
     width: 100%;
   }
 
+  .min_lnk {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    line-height: 70px;
+    background: #03001C;
+    border-top: 2px solid #5B8FB9;
+    border-bottom: 2px solid #5B8FB9;
+    opacity: 0;
+    z-index: -9999;
+    transition: all .5s;
+  }
+
+  .min_lnk a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .min_lnk a:hover {
+    text-decoration: none;
+    color: #5B8FB9;
+  }
+
+  .min_lnk hr {
+    width: 100%;
+    border: 0;
+    border-top: 2px solid #5B8FB9;
+  }
 
 @media only screen and (max-width: 960px) {
 
@@ -162,14 +201,15 @@ body {
     .my_img {
         width: 400px;
         height: 500px;
-        padding-right: 200px;
-        margin-bottom: 50px;
         margin-top: 100px;
+        position: relative;
+        right: 5%;
     }
 
     .getting_started p {
         font-size: 40px;
         margin-top: 100px;
+        text-align: center;
     }
     .getting_started button {
         margin-left: 60px;
@@ -179,25 +219,37 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding-right: 200px;
+        position: relative;
+        right: 13%;
     }
 
     .special_links {
-        margin-left: 690px;
-        margin-top: 240px;
-        flex-direction: column;       
-    }
-    .lnk {
-        margin: 15px;
-        padding: 2px;
-        color: white;
-        z-index: -9999;
         opacity: 0;
+        z-index: -99999;
+    }
+    
+    .one.is_active {
+        translate: 0 10px;
+        rotate: -45deg;
+        transition: all .5s;
     }
 
-    .lnk.active {
+    .two.is_active {
+        opacity: 0;
+        z-index: -9999;
+        transition: all .5s;
+    }
+
+    .three.is_active {
+        translate: 0 -6px;
+        rotate: 45deg;
+        transition: all .5s;
+    }
+
+    .min_lnk.active {
         opacity: 1;
-        z-index: 10000000;
+        z-index: 100000;
+        transition: all .5s;
     }
 }
 

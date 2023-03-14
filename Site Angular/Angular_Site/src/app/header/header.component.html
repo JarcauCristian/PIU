@@ -1,0 +1,24 @@
+<nav class="nav_bar">
+    <a href="/" class="nav_logo">NEXT</a>
+    <div class="special_links">
+        <a href="/">Inventory</a>
+        <a href="/">Stocks</a>
+        <a href="/">Contact</a>
+        <button>Sign Up</button>
+    </div>
+    <a class="nav_btn" target="_blank" (click)="switchToggle()">
+        <div [className]="toggle? 'one is_active' : 'one'"></div>
+        <div [className]="toggle? 'two is_active' : 'two'"></div>
+        <div [className]="toggle? 'three is_active' : 'three'"></div>
+    </a>
+</nav>
+
+<div [className]="toggle? 'min_lnk active' : 'min_lnk'">
+    <a href="/">Inventory</a>
+    <hr>
+    <a href="/">Stocks</a>
+    <hr>
+    <a href="/">Contact</a>
+    <hr>
+    <a href="/">Sign Up</a>
+</div>

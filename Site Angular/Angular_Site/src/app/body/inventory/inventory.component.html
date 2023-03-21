@@ -1,1 +1,11 @@
-<p>inventory works!</p>
+<div class="items">
+    <div *ngFor="let item of items" class="item">
+        <p class="name">Nume: {{item}}</p>
+        <p class="quantity">Cantitate: {{item}}</p>
+        <p claas="description">Descriere: {{item}}</p>
+        <div class="buttons">
+            <button mat-raised-button>delete</button>
+            <button mat-raised-button>edit</button>
+        </div>
+    </div>
+</div>

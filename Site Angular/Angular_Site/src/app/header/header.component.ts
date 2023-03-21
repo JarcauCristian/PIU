@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent{
+
+  constructor (private router: Router) {}
+
   toggle = false;
 
   switchToggle() {
     this.toggle = !this.toggle;
+  }
+
+  GoToInventory(){
+    this.router.navigate(['inventory'])
   }
 }

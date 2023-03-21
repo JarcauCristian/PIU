@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent {
-
+  items : string[] = [
+    "John",
+    "Maria"
+  ]
 }

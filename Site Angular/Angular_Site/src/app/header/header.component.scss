@@ -4,7 +4,7 @@
     flex-direction: row;
     width: 100%;
     height: 65px;
-    background: #03001C;
+    background: #1B1B1E;
     position: sticky;
     justify-content: flex-start;
     align-items: center;
@@ -13,7 +13,7 @@
 .nav_btn {
   width: 30px;
   display: none;
-  border: 4px solid #5B8FB9;
+  border: 4px solid #58A4B0;
   padding: 8px 10px;
   cursor: pointer;
   margin-left: auto;
@@ -34,7 +34,7 @@
     letter-spacing: 4px;
     margin-left: 40px;
     padding: 10px;
-    background-image: linear-gradient(to right, #5B8FB9 0%, #301E67 100%);
+    background-image: linear-gradient(to right, #D8DBE2 0%, #58A4B0 100%);
     background-size: 100%;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
@@ -57,16 +57,17 @@
     color: white;
     text-decoration: none;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .special_links a:hover{
-    color: #5B8FB9;
+    color: #58A4B0;
 }
 
 .special_links button {
     width: 100px;
     height: 35px;
-    background: #5B8FB9;
+    background: #58A4B0;
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -74,8 +75,9 @@
 
 
 .special_links button:hover {
-    background: #301E67;
+    background: #D8DBE2;
     transition: 0.7s;
+    color: black;
 }
 
 .min_lnk {
@@ -88,9 +90,9 @@
     justify-content: center;
     align-items: center;
     line-height: 70px;
-    background: #03001C;
-    border-top: 2px solid #5B8FB9;
-    border-bottom: 2px solid #5B8FB9;
+    background: #1B1B1E;
+    border-top: 2px solid #58A4B0;
+    border-bottom: 2px solid #58A4B0;
     opacity: 0;
     z-index: -9999;
     transition: all .5s;
@@ -103,13 +105,13 @@
 
   .min_lnk a:hover {
     text-decoration: none;
-    color: #5B8FB9;
+    color: #58A4B0;
   }
 
   .min_lnk hr {
     width: 100%;
     border: 0;
-    border-top: 2px solid #5B8FB9;
+    border-top: 2px solid #58A4B0;
   }
 
 @media only screen and (max-width: 960px) {

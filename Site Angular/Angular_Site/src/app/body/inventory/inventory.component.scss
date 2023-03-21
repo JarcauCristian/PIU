@@ -38,4 +38,19 @@
 .buttons {
     display: flex;
     flex-direction: row;
+    margin-right: 20px;
+}
+
+.buttons button {
+    margin-left: 20px;
+}
+
+.buttons :last-child {
+    background-color: #0cce6b;
+    color: white;
+}
+
+.buttons :first-child {
+    background-color: #a8201a;
+    color: white;
 }

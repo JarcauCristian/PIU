@@ -8,19 +8,28 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './body/home/home.component';
 import { InventoryComponent } from './body/inventory/inventory.component';
 import {MatButtonModule} from '@angular/material/button';
+import { FormComponent } from './body/form/form.component';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    InventoryComponent
+    InventoryComponent,
+    FormComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

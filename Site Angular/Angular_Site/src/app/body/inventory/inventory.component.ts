@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
 import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/models/item';
@@ -9,7 +9,7 @@ import { Item } from 'src/models/item';
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss']
 })
-export class InventoryComponent implements OnInit{
+export class InventoryComponent implements OnInit {
   error?: string;
   itemList!: Item[];
   items : string[] = [
@@ -56,15 +56,17 @@ export class InventoryComponent implements OnInit{
   }
 
   async openDialog() {
-    const dialogRef = this.dialog.open(FormComponent, {
+    const dialogRef = this.dialog.open( FormComponent , {
       width: '250px',
-      data: {item : this.items}
+      data: { items: this.items },
     });
 
-    dialogRef.afterClosed().subscribe(() => {
-      console.log("New Item added!")
-    });
-    
+  dialogRef.afterClosed().subscribe(() => {
+    console.log('The dialog was closed.')
+  })
   }
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+      
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +10,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class FormComponent implements OnInit{
 
   form!: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(public dialogRef: MatDialogRef<FormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string[], private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -21,6 +23,10 @@ export class FormComponent implements OnInit{
       descriere: [null],
       cantitate: [null]
     })
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

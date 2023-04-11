@@ -12,6 +12,7 @@ import { FormComponent } from './body/form/form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormComponent
   ],
   imports: [
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,

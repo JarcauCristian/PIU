@@ -15,7 +15,7 @@
     justify-content: center;
 }
 
-.form h1 {
+h1 {
     text-align: center;
 }
 
@@ -32,4 +32,9 @@
 
 .mdc-button__label {
     color: #58A4B0 !important;
+}
+
+button {
+    width: 200px;
+    background-color: #58A4B0;
 }

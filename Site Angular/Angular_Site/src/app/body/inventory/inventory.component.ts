@@ -44,6 +44,7 @@ export class InventoryComponent implements OnInit {
     "John",
     "Maria"
   ]
+  id: number = 2;
 
   constructor(public dialog: MatDialog, public itemService: ItemService) {}
 
@@ -55,10 +56,19 @@ export class InventoryComponent implements OnInit {
     })
   }
 
+  deletItem(id: number | undefined): void {
+    this.itemService.deleteItem(id!).subscribe(() => {
+      window.location.reload()
+    }, (err) => {
+        this.error = err.message;
+    })
+  }
+
   async openDialog() {
     const dialogRef = this.dialog.open( FormComponent , {
-      width: '250px',
-      data: { items: this.items },
+      width: '400px',
+      height: '400px',
+      data: { idToBeEdit: this.id } 
     });
 
   dialogRef.afterClosed().subscribe(() => {
@@ -67,6 +77,6 @@ export class InventoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      
+      this.getItems();
   }
 }

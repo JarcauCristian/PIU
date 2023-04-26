@@ -1,31 +1,18 @@
-<div class="body">
-    <div class="form" [formGroup]="form">
-        <h1>Adaugare Item</h1>
-        <p>
-            <mat-form-field appearance="fill">
-                <mat-label>Nume</mat-label>
-                <input matInput type="text" formControlName="nume" placeholder="Nume">
-                <mat-icon matSuffix>person</mat-icon>
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="fill">
-                <mat-label>Descriere</mat-label>
-                <input matInput type="text" formControlName="descriere" placeholder="Descriere">
-                <mat-icon matSuffix>description</mat-icon>
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="fill">
-                <mat-label>Cantitate</mat-label>
-                <input matInput type="text" formControlName="cantitate" placeholder="Cantitate">
-                <mat-icon matSuffix>equalizer</mat-icon>
-            </mat-form-field>
-        </p>
-        <button mat-raised-button>
-            <mat-icon matSuffix>add_circle</mat-icon>
-            Add Item
-        </button>
+<h1 mat-dialog-title>Create or Edit Form</h1>
+<div class="form" [formGroup]="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="Name">
+    </mat-form-field>
 
-    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Number</mat-label>
+        <input matInput type="text" formControlName="number" placeholder="Number">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Category</mat-label>
+        <input matInput type="text" formControlName="category" placeholder="category">
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="saveNewItem()">SAVE</button>
 </div>

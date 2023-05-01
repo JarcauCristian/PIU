@@ -1,19 +1,13 @@
 .body {
-    background: #7EA3CC;
     margin-top: 60px;
 }
 
-.body h1 {
-    margin-left: 45%;
-    font-size: 40px;
-    padding-top: 10px;
-    font-weight: 20%;
-}
 
 .body button {
-    background-color: #F2E94E;
+    background-color: #69f0ae;
     height: 40px;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .items {
@@ -29,11 +23,12 @@
     flex-direction: column;
     padding: 10px;
     align-items: center;
+    justify-content: center;
     margin: 20px;
-    max-width: 300px;
-    color: white;
-    background: #28536B;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    color: #FCFCFC;
+    background: #3B404F;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -45,7 +40,6 @@
 
 .quantity {
     font-size: 17px;
-    color: lightgray;
 }
 
 .description {
@@ -63,11 +57,11 @@
 }
 
 .buttons :last-child {
-    background-color: #00A676;
-    color: #D8DBE2;
+    background-color: #69f0ae;
+    color: black;
 }
 
 .buttons :first-child {
-    background-color:#DA3E52;
-    color: #D8DBE2;
+    background-color:#FEFBFB;
+    color: black;
 }

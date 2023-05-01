@@ -5,13 +5,25 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background:#d8fbea;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.animated {
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 .first_section img {
     width: 600px;
     height: 400px;
-    margin-left: 200px;
+    margin-left: 500px;
+}
+
+.animated {
+  visibility: visible !important;
 }
 
 .gt_started {
@@ -20,6 +32,7 @@
     justify-content: center;
     flex-direction: column;
 }
+
 
 .gt_started p {
     font-size: 30px;
@@ -34,8 +47,8 @@
     height: 60px;
     line-height: 40px;
     font-size: 18px;
-    color: #fff;
-    background: #1B1B1E;
+    color: #FEFBFB;
+    background: black;
     letter-spacing: 2px;
     text-align: center;
     position: relative;
@@ -57,12 +70,14 @@
     left: 0;
     width: 0;
     height: 100%;
-    background: #D8DBE2;
+    background: #FEFBFB;
     transition: all .35s;
+    color: #1B1B1E;
   }
   
   .start_btn:hover{
     color: #fff;
+    color: #1B1B1E;
   }
 
   .start_btn a:hover {
@@ -71,4 +86,17 @@
   
   .start_btn:hover::after{
     width: 100%;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .first_section {
+      flex-direction: column;
+    }
+    .gt_started {
+      margin-top: 100px;
+    }
+    .first_section img{
+      margin-left: 60px;
+      margin-top: 100px;
+    }
   }

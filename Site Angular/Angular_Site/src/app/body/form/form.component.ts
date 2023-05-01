@@ -15,17 +15,15 @@ export interface DialogData {
 })
 export class FormComponent implements OnInit {
 
-  private itemToEdit: Item | undefined = new Item();
+  private itemToEdit: Item = new Item();
   errorText?: string;
   form!: FormGroup;
   subscriptionList: Subscription[] = [];
   constructor(public dialogRef: MatDialogRef<FormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData, private formBuilder: FormBuilder, public itemService: ItemService,
-    private activatedRoute: ActivatedRoute) { }
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private formBuilder: FormBuilder, public itemService: ItemService) { }
 
   ngOnInit(): void {
     this.errorText = "";
-
     if (this.data.idToBeEdit != 0)
       this.setEditItem(this.data.idToBeEdit!);
     this.createForm();
@@ -46,6 +44,7 @@ export class FormComponent implements OnInit {
 
     this.itemService.postItem(newItem).subscribe(() => {
       this.dialogRef.close();
+      window.location.reload();
     }, (err) => {
       this.errorText = err.error;
     });
@@ -54,6 +53,7 @@ export class FormComponent implements OnInit {
   private updateItem(newItem: Item): void {
     this.itemService.editItem(newItem).subscribe(() => {
       this.dialogRef.close();
+      window.location.reload();
     }, (err) => {
       this.errorText = err.error;
     });
@@ -77,12 +77,11 @@ export class FormComponent implements OnInit {
   }
 
   private setEditItem(id: number): void {
-    this.itemService.getItemById(id).subscribe((item: Item) => {
+    this.itemService.getItemById(id!).subscribe((item: Item) => {
       this.itemToEdit = item;
-    });
-
-    this.form.patchValue(this.itemToEdit!, {
-      emitEvent: false
+      this.form.patchValue(this.itemToEdit!, {
+        emitEvent: false
+      });
     });
   }
 }

@@ -15,6 +15,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { AnimateOnScrollModule, ScrollService } from 'ng2-animate-on-scroll';
+import { DeleteFormComponent } from './body/delete-form/delete-form.component';
+import { GraphsComponent } from './body/graphs/graphs.component';
+import { NgChartsModule } from 'ng2-charts';
+import { ContactFormComponent } from './body/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,10 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     HomeComponent,
     InventoryComponent,
-    FormComponent
+    FormComponent,
+    DeleteFormComponent,
+    GraphsComponent,
+    ContactFormComponent
   ],
   imports: [
     MatInputModule,
@@ -36,8 +44,10 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
+    AnimateOnScrollModule,
+    NgChartsModule,
   ],
-  providers: [],
+  providers: [ScrollService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

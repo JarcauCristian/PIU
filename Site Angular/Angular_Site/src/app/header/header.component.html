@@ -1,10 +1,10 @@
-<nav class="nav_bar">
+<nav [className]="home? 'nav_bar is_active' : 'nav_bar'">
     <a href="/" class="nav_logo">NEXT</a>
+    <h1>{{ url ? url : 'Welcome' }}</h1>
     <div class="special_links">
         <a (click)="GoToInventory()">Inventory</a>
-        <a href="/">Stocks</a>
-        <a href="/">Contact</a>
-        <button>Sign Up</button>
+        <a href="/graph">Graphs</a>
+        <a href="/contact">Contact</a>
     </div>
     <a class="nav_btn" target="_blank" (click)="switchToggle()">
         <div [className]="toggle? 'one is_active' : 'one'"></div>
@@ -16,9 +16,7 @@
 <div [className]="toggle? 'min_lnk active' : 'min_lnk'">
     <a href="/inventory">Inventory</a>
     <hr>
-    <a href="/">Stocks</a>
+    <a href="/graph">Graphs</a>
     <hr>
-    <a href="/">Contact</a>
-    <hr>
-    <a href="/">Sign Up</a>
+    <a href="/contact">Contact</a>
 </div>

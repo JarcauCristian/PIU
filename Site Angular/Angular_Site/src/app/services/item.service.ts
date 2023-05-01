@@ -8,26 +8,26 @@ import { Item } from 'src/models/item';
 })
 export class ItemService {
 
-  readonly baseURL = 'http://localhost:44358/api/item/'
+  readonly baseURL = 'http://localhost:4200/api/items'
   constructor(public httpClient: HttpClient) { }
 
   getItems(): Observable<Item[]> {
-    return this.httpClient.get(this.baseURL + 'get') as Observable<Item[]>;
+    return this.httpClient.get('/api/items') as Observable<Item[]>;
   }
 
   getItemById(id: number): Observable<Item> {
-    return this.httpClient.get(this.baseURL + 'getitems/' + id) as Observable<Item>;
+    return this.httpClient.get('/api/items/' + id) as Observable<Item>;
   }
 
   postItem(item: Item): Observable<Item> {
-    return this.httpClient.post(this.baseURL + 'post/', item) as Observable<Item>;
+    return this.httpClient.post('/api/items', item) as Observable<Item>;
   }
 
   deleteItem(id: number): Observable<null> {
-    return this.httpClient.delete(this.baseURL + 'delete/' + id) as unknown as Observable<null>;
+    return this.httpClient.delete('/api/items/' + id) as unknown as Observable<null>;
   }
 
   editItem(item: Item): Observable<null> {
-    return this.httpClient.put(this.baseURL + 'edit/' + item.id, item) as unknown as Observable<null>;
+    return this.httpClient.put('/api/items/' + item.id, item) as unknown as Observable<null>;
   }
 }

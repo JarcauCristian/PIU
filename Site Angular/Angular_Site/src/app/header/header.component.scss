@@ -13,10 +13,38 @@
     top: 0;
 }
 
+.nav_bar.is_active {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 65px;
+    background: #d8fbea;
+    position: fixed;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+    top: 0;
+}
+
+.nav_bar.is_active h1 {
+    color: #3B404F;
+    font-size: 35px;
+    margin-top: 16px;
+    margin-left: 37%;
+}
+
+.nav_bar h1 {
+    color: white;
+    font-size: 35px;
+    margin-top: 16px;
+    margin-left: 37%;
+}
+
 .nav_btn {
   width: 30px;
   display: none;
-  border: 4px solid #58A4B0;
+  border: 4px solid #69f0ae;
   padding: 8px 10px;
   cursor: pointer;
   margin-left: auto;
@@ -37,7 +65,7 @@
     letter-spacing: 4px;
     margin-left: 40px;
     padding: 10px;
-    background-image: linear-gradient(to right, #D8DBE2 0%, #58A4B0 100%);
+    background-image: linear-gradient(to right, #3B404F 0%, #69f0ae 100%);
     background-size: 100%;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
@@ -47,7 +75,7 @@
 }
 
 .special_links {
-    width: 500px;
+    width: 300px;
     margin-left: auto; 
     margin-right: 25px;
     display: flex;
@@ -63,19 +91,20 @@
     cursor: pointer;
 }
 
-.special_links a:hover{
-    color: #58A4B0;
-}
-
-.special_links button {
-    width: 100px;
-    height: 35px;
-    background: #58A4B0;
-    color: white;
+.nav_bar.is_active .special_links a{
+    color: #3B404F;
+    text-decoration: none;
+    font-size: 20px;
     cursor: pointer;
-    font-size: 16px;
 }
 
+.special_links a:hover{
+    color: #69f0ae;
+}
+
+.nav_bar.is_active .special_links a:hover{
+    color: #69f0ae;
+}
 
 .special_links button:hover {
     background: #D8DBE2;
@@ -85,7 +114,8 @@
 
 .min_lnk {
     width: 100%;
-    position: absolute;
+    position: fixed;
+    top: 45px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -93,9 +123,9 @@
     justify-content: center;
     align-items: center;
     line-height: 70px;
-    background: #1B1B1E;
-    border-top: 2px solid #58A4B0;
-    border-bottom: 2px solid #58A4B0;
+    background: #3B404F;
+    border-top: 2px solid #69f0ae;
+    border-bottom: 2px solid #69f0ae;
     opacity: 0;
     z-index: -9999;
     transition: all .5s;
@@ -108,19 +138,25 @@
 
   .min_lnk a:hover {
     text-decoration: none;
-    color: #58A4B0;
+    color: #69f0ae;
   }
 
   .min_lnk hr {
     width: 100%;
     border: 0;
-    border-top: 2px solid #58A4B0;
+    border-top: 2px solid #69f0ae;
   }
 
 @media only screen and (max-width: 960px) {
 
     .nav_logo {
         left: 40px;
+    }
+    .nav_bar h1 {
+        margin-left: 26%;
+    }
+    .nav_bar.nav_bar.is_active h1 {
+        margin-left: 26%;
     }
 
     .nav_btn {
@@ -154,5 +190,7 @@
         opacity: 1;
         z-index: 100000;
         transition: all .5s;
+        position: fixed;
+        top: 65px;
     }
 }
